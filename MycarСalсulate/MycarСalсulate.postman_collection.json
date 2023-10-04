@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "09e0d1a7-58b5-489f-b6fa-b82d4a4cde47",
+		"name": "4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22938204",
+		"_collection_link": "https://winter-rocket-901413.postman.co/workspace/63de9da1-c061-4af4-812e-e9590d1d4fd3/collection/22938204-09e0d1a7-58b5-489f-b6fa-b82d4a4cde47?action=share&source=collection_link&creator=22938204"
+	},
+	"item": [
+		{
+			"name": "MycarcalCulate Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Test body\", function(){\r",
+							"const getData3 = pm.response.json()\r",
+							"\r",
+							"var credit_period = pm.iterationData.get(\"credit_period\");\r",
+							"var first_payment = pm.iterationData.get(\"first_payment\");\r",
+							"var monthly_payment = pm.iterationData.get(\"monthly_payment\");\r",
+							"console.log(credit_period);\r",
+							"console.log(first_payment);\r",
+							"console.log(monthly_payment);\r",
+							"\r",
+							"if (credit_period === 12 & first_payment === 1050685){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 12 & first_payment === 2000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 12 & first_payment === 3000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 12 & first_payment === 4000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}else if (credit_period === 12 & first_payment === 5000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 24 & first_payment === 1050685){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 24 & first_payment === 2000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 24 & first_payment === 3000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 24 & first_payment === 4000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}else if (credit_period === 24 & first_payment === 5000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 36 & first_payment === 1050685){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 36 & first_payment === 2000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 36 & first_payment === 3000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 36 & first_payment === 4000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}else if (credit_period === 36 & first_payment === 5000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 48 & first_payment === 1050685){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 48 & first_payment === 2000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 48 & first_payment === 3000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 48 & first_payment === 4000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}else if (credit_period === 48 & first_payment === 5000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 60 & first_payment === 1050685){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 60 & first_payment === 2000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 60 & first_payment === 3000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else if (credit_period === 60 & first_payment === 4000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}else if (credit_period === 60 & first_payment === 5000000){\r",
+							"pm.expect(getData3.monthly_payment).equal(monthly_payment);\r",
+							"}\r",
+							"else{\r",
+							"pm.expect(getData3.monthly_payment).equal(0);\r",
+							"}\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n\"credit_period\" : {{credit_period}},\r\n\"first_payment\" : {{first_payment}},\r\n\"price\": 5253425\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.mycar.kz/finances/api/v1/credit-programs/1672/calculate/",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"mycar",
+						"kz"
+					],
+					"path": [
+						"finances",
+						"api",
+						"v1",
+						"credit-programs",
+						"1672",
+						"calculate",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

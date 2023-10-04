@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "e601e945-130b-42ad-85a6-046af15947be",
+		"name": "3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22938204",
+		"_collection_link": "https://winter-rocket-901413.postman.co/workspace/63de9da1-c061-4af4-812e-e9590d1d4fd3/collection/22938204-e601e945-130b-42ad-85a6-046af15947be?action=share&source=collection_link&creator=22938204"
+	},
+	"item": [
+		{
+			"name": "MycarTest2 Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Negative\", function(){\r",
+							"pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Positive\", function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test Json\", function(){\r",
+							"pm.response.to.have.jsonBody();\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test body\", function(){\r",
+							"const getData = pm.response.json()\r",
+							"pm.expect(getData).to.have.property(\"credit_period\");\r",
+							"pm.expect(getData).to.have.property(\"min_price\");\r",
+							"pm.expect(getData).to.have.property(\"initial_credit_price\");\r",
+							"pm.expect(getData).to.have.property(\"first_payment_max_price\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test body\", function(){\r",
+							"const getData2 = pm.response.json()\r",
+							"pm.expect(getData2.credit_period).not.equal(null);\r",
+							"pm.expect(getData2.min_price).not.equal(null);\r",
+							"pm.expect(getData2.initial_credit_price).not.equal(null);\r",
+							"pm.expect(getData2.first_payment_max_price).not.equal(null);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Test body\", function(){\r",
+							"const getData3 = pm.response.json()\r",
+							"pm.expect(getData3.credit_period).equal(84);\r",
+							"var newPrice = pm.iterationData.get(\"price\");\r",
+							"\r",
+							"if (newPrice === 10000000){\r",
+							"pm.expect(getData3.min_price).equal(2000000);\r",
+							"pm.expect(getData3.initial_credit_price).equal(5000000);\r",
+							"pm.expect(getData3.first_payment_max_price).equal(9800000);\r",
+							"}\r",
+							"else if (newPrice === 20000000){\r",
+							"pm.expect(getData3.min_price).equal(5000000 );\r",
+							"pm.expect(getData3.initial_credit_price).equal(10000000);\r",
+							"pm.expect(getData3.first_payment_max_price).equal(19800000);\r",
+							"}\r",
+							"else if (newPrice === 30000000){\r",
+							"pm.expect(getData3.min_price).equal(15000000 );\r",
+							"pm.expect(getData3.initial_credit_price).equal(15000000);\r",
+							"pm.expect(getData3.first_payment_max_price).equal(29800000);\r",
+							"}\r",
+							"else if (newPrice === 40000000){\r",
+							"pm.expect(getData3.min_price).equal(25000000 );\r",
+							"pm.expect(getData3.initial_credit_price).equal(25000000 );\r",
+							"pm.expect(getData3.first_payment_max_price).equal(39800000);\r",
+							"}\r",
+							"else if (newPrice === 50000000){\r",
+							"pm.expect(getData3.min_price).equal(35000000 );\r",
+							"pm.expect(getData3.initial_credit_price).equal(35000000 );\r",
+							"pm.expect(getData3.first_payment_max_price).equal(49800000);\r",
+							"}\r",
+							"else if (newPrice === 60000000){\r",
+							"pm.expect(getData3.min_price).equal(45000000 );\r",
+							"pm.expect(getData3.initial_credit_price).equal(45000000 );\r",
+							"pm.expect(getData3.first_payment_max_price).equal(59800000);\r",
+							"}\r",
+							"else{\r",
+							"pm.expect(getData3.min_price).equal(0);\r",
+							"}\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": {{price}}\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.mycar.kz/finances/api/v1/credit-programs/109/initial/",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"mycar",
+						"kz"
+					],
+					"path": [
+						"finances",
+						"api",
+						"v1",
+						"credit-programs",
+						"109",
+						"initial",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
