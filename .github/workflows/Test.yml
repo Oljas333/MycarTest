@@ -1,4 +1,4 @@
----
+
 name: Newman Run
 
 on:
@@ -15,4 +15,3 @@ jobs:
         with:
           collection: MycarTest/MycarCreditPrograms/MycarCreditPrograms.postman_collection.json
           iterationData: MycarTest/MycarCreditPrograms/NewUserId.json
-...
