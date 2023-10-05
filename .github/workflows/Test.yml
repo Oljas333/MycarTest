@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@master
       - uses: matt-ball/newman-action@master
         with:
-          collection: MycarTest/MycarCreditPrograms/MycarCreditPrograms.postman_collection.json
-          iterationData: MycarTest/MycarCreditPrograms/NewUserId.json
+          collection: MycarCreditPrograms.postman_collection.json
+          iterationData: NewUserId.json
